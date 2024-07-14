@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { Course } from "../types";
 import CourseCard from "../component/CourseCard";
 import CourseForm from "../component/CourseForm";
+import { FiSearch } from "react-icons/fi";
 
 export default function CoursePage() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -122,32 +124,12 @@ export default function CoursePage() {
               placeholder="Search..."
               className="p-2 border border-gray-300 rounded-l-md focus:outline-none"
             />
-            <button className="bg-indigo-500 p-2 text-white  rounded-r-md">
-              Search
+            <button className="bg-indigo-500 p-3 text-white  rounded-r-md">
+              <FiSearch />
             </button>
           </div>
-          {/* <label>
-            Kategori:
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option>Semua</option>
-              <option>Logika Algoritma</option>
-              <option>Struktur Data</option>
-              <option>Basis Data</option>
-              <option>Web Fundamental</option>
-              <option>Java Fundamental</option>
-              <option>C# Fundamental</option>
-              <option>React Fundamental</option>
-              <option>Java Advance</option>
-              <option>C# Advance</option>
-              <option>React Advance</option>
-              <option>React Java With Typescript</option>
-            </select>
-          </label> */}
           <div className="flex gap-2 items-center">
-            <p>Urutkan:</p>
+            <p>Sorting:</p>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as keyof Course)}
@@ -162,8 +144,8 @@ export default function CoursePage() {
               onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
               className="p-2 border border-gray-300 rounded-md"
             >
-              <option value="asc">Naik</option>
-              <option value="desc">Turun</option>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
             </select>
           </div>
           <button

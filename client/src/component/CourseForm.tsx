@@ -43,7 +43,7 @@ export default function CourseForm({
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
+      <div className="bg-white p-8 rounded-lg shadow-lg mx-10">
         <h2 className="text-2xl mb-4">
           {course.id ? "Edit Course" : "Add Course"}
         </h2>
